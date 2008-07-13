@@ -1,6 +1,3 @@
-# Defines the Autumn::Genesis class, which bootstraps the Autumn environment
-# and starts the Foliater.
-
 require 'rubygems'
 require 'yaml'
 require 'logger'
@@ -8,7 +5,6 @@ require 'facets'
 require 'facets/hash/symbolize_keys'
 require 'libs/misc'
 require 'libs/speciator'
-require 'libs/authentication'
 
 module Autumn # :nodoc:
   

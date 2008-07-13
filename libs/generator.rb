@@ -1,11 +1,8 @@
-# Defines the Autumn::Generator class, which generates and destroys files and
-# directories of Autumn objects for script/generate.
-
 require 'facets'
 require 'yaml'
 require 'libs/coder'
 
-module Autumn
+module Autumn # :nodoc:
   
   # Generates the files for Autumn templates such as leaves and seasons. The
   # contents of these template files are populated by an LeafCoder instance.
@@ -17,19 +14,15 @@ module Autumn
       "leaves.yml" => {
         'Scorekeeper' => {
           'class' => 'Scorekeeper'
-        },
-        'Administrator' => {
-          'class' => 'Administrator',
-          'authentication' => 'op'
         }
       },
       "stems.yml" => {
         'Example' => {
           'server' => 'irc.yourircserver.com',
-          'nick' => 'MyIRCBot',
+          'nick' => 'Yournick',
           'channel' => '#yourchannel',
           'rejoin' => true,
-          'leaves' => [ 'Administrator', 'Scorekeeper' ]
+          'leaves' => [ 'Scorekeeper' ]
         }
       },
       "season.yml" => {

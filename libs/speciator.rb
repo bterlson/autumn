@@ -1,6 +1,3 @@
-# Defines the Autumn::Speciator class, which stores the configurations of many
-# Autumn objects.
-
 require 'singleton'
 
 module Autumn

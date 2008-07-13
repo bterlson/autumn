@@ -1,5 +1,3 @@
-# Defines the Autum::CTCP class, which implements CTCP support.
-
 require 'time'
 
 module Autumn

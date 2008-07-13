@@ -4,6 +4,7 @@ require 'facets/random'
 # substrings and chooses from them randomly.
 
 class Controller < Autumn::Leaf
+  before_filter :authenticate, :only => [ :reload, :quit ]
   
   # Insults the unfortunate argument of this command.
   
@@ -57,6 +58,11 @@ class Controller < Autumn::Leaf
     'pumpion', 'puttock', 'ratsbane', 'scut', 'skainsmate', 'strumpet',
     'varlet', 'vassal', 'wagtail', 'whey-face'
   ]
+  
+  def authenticate_filter(stem, channel, sender, command, msg, opts)
+    # Returns true if the sender has any of the privileges listed below
+    not ([ :operator, :admin, :founder, :channel_owner ] & [ stem.privilege(channel, sender) ].flatten).empty?
+  end
   
   def insult(victim)
     var :adjective => ADJECTIVES.at_rand

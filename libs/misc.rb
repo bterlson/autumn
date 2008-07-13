@@ -1,5 +1,4 @@
-# Miscellaneous extra methods and objects used by Autumn, and additions to Ruby
-# Core objects.
+# Miscellaneous extra methods and objects used by Autumn.
 
 require 'thread'
 require 'facets/style'
